@@ -40,7 +40,7 @@ def create_project(dirname, filename):
     # Hardcoded Qt prefix path for now (specific to homebrew/macos environment)
     set(CMAKE_PREFIX_PATH "{qt_prefix}")
 
-    # Enable Qt's automatic processing of MOC/UIC/RCC
+    # Enable Qt's automatic processing of MOC/UIC/RCC (i "think" i need these)
     set(CMAKE_AUTOMOC ON)
     set(CMAKE_AUTORCC ON)
     set(CMAKE_AUTOUIC ON)
@@ -52,6 +52,7 @@ def create_project(dirname, filename):
       src/main.cpp
     )
 
+    # These should be good enough for now to get me going
     target_link_libraries({project_name}
       PRIVATE
         Qt6::Core
