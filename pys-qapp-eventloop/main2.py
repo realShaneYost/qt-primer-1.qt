@@ -28,7 +28,7 @@ from PySide6 import QtCore
 class Foo(QtCore.QObject):
   # -----------------------------------------------------------------------------------------------
   # Signals declared without parameters for simplicity which seems like a nice to way to write my
-  # examples.
+  # examples. These are class attributes which happen to be signals for Foo type
   # -----------------------------------------------------------------------------------------------
   signal1 = QtCore.Signal()
   signal2 = QtCore.Signal()
@@ -46,6 +46,8 @@ class Foo(QtCore.QObject):
     print("Emit signal one")
     self.signal1.emit()   # slot1 executes immediately (direct connection)
 
+    # here's the crux of what i'm trying to understand. I now know that app.quit won't actually 
+    # quit until after this event handler do_stuff returns.
     print("Emit finished")
     self.finished.emit()  # app.quit() is invoked, but it only requests exit after this handler ends
 
