@@ -97,8 +97,8 @@ def main():
 
   # Enter the Qt event loop. It runs until app.quit() is requested and control returns to the
   # dispatcher.
-  return app.exec()
+  sys.exit(app.exec())
 
 
 if __name__ == "__main__":
-  sys.exit(main())
+  main()
